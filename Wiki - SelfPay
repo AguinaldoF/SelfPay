@@ -1,0 +1,76 @@
+Segue abaixo os métodos criados na API para consumo, a forma com que deve ser chamados e passado os parametros por JSON:
+OBS. Em todas as chamadas, será necessário passar o parametro TOKEN.
+
+Método para adicionar cliente:
+
+URL: http://localhost:57828/api/Cliente/AddCliente
+Método: POST
+JSON:
+
+{
+	"Token":"teste",
+	"nome":"Self Pay",
+	"email":"selfpay@mailinator.com",
+	"dataCadastro":"2019-12-10 23:15:00"
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Método para retornar uma lista dos clientes:
+
+URL: http://localhost:57828/api/Cliente/GetAllCliente
+Método: POST
+JSON:
+
+{
+	"Token":"teste",
+	"carrinho_dataCadastro":"2019-12-11 00:17:00",
+	"carrinho_total":"0.0",
+	"cliente_id":"1"
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Método para adicionar um carrinho:
+
+URL: http://localhost:57828/api/Carrinho/AddCarrinho
+Método: POST
+JSON:
+
+{
+	"Token":"teste",
+	"carrinho_dataCadastro":"2019-12-11 00:17:00",
+	"carrinho_total":"0.0",
+	"cliente_id":"1"
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Método para adicionar um produto
+
+URL: http://localhost:57828/api/Produto/AddProduto
+Método: POST
+JSON:
+
+{
+	"Token":"teste",
+	"produto_nome":"Headset HyperX",
+	"produto_desc":"0.0",
+	"produto_ativo":"true",
+	"produto_preco":"90.00",
+	"produto_precoPromo":"0.0"
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Método para fazer um pedido:
+
+URL: http://localhost:57828/api/Pedido/FazerPedido
+Método: POST
+JSON
+{
+	"Token":"teste",
+	"cliente_id":"1",
+	"produto_id":"1",
+	"carrinhoItens_quantidade":"1"
+}
